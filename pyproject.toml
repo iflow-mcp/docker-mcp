@@ -1,5 +1,5 @@
 [project]
-name = "docker-mcp"
+name = "iflow-mcp_docker-mcp"
 version = "0.1.0"
 description = "A docker MCP server"
 readme = "README.md"
@@ -22,3 +22,5 @@ build-backend = "hatchling.build"
 
 [project.scripts]
 docker-mcp = "docker_mcp:main"
+[tool.hatch.build.targets.wheel]
+packages = ["src/docker_mcp"]
