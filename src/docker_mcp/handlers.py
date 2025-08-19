@@ -1,5 +1,6 @@
 from typing import List, Dict, Any
 import asyncio
+import tempfile
 import os
 import yaml
 import platform
@@ -106,7 +107,7 @@ class DockerHandlers:
 
     @staticmethod
     def _save_compose_file(yaml_content: dict, project_name: str) -> str:
-        compose_dir = os.path.join(os.getcwd(), "docker_compose_files")
+        compose_dir = os.path.join(tempfile.gettempdir(), "docker_compose_files")
         os.makedirs(compose_dir, exist_ok=True)
 
         compose_yaml = yaml.safe_dump(
